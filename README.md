@@ -3,12 +3,12 @@
 
 ## 🐳 Running Pulsar Standalone
 
-Start Pulsar:
+Start Pulsar instance:
 
 ```bash
 docker compose up -d
 ```
-verify props works
+verify env properties for increasing the size work
 
 ```bash
 docker exec -it pulsar-standalone \
