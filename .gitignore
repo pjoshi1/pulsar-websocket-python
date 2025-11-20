@@ -1,0 +1,33 @@
+
+---
+
+# ✅ **.gitignore (copy-paste ready)**
+
+```gitignore
+# Python venv
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Byte-compiled / cache directories
+*.egg-info/
+dist/
+build/
+
+# Docker
+*.pid

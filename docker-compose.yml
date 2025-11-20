@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  pulsar:
+    image: apachepulsar/pulsar:4.1.2
+    container_name: pulsar-standalone
+    command: >
+      bash -c "
+        bin/apply-config-from-env.py conf/standalone.conf &&
+        bin/pulsar standalone
+      "
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+    environment:
+      # ---- Your required overrides ----
+
+      # Max Pulsar message size (binary protocol)
+      PULSAR_PREFIX_maxMessageSize: "8388608"   # 8 MB
+
+      # Max WebSocket JSON text frame size
+      PULSAR_PREFIX_webSocketMaxTextFrameSize: "10485760"  # 10 MB
+
+      # Optional example
+      PULSAR_PREFIX_brokerDeduplicationEnabled: "false"
+
+    restart: unless-stopped
